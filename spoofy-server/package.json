@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js",
+    "heroku-prebuild": "cd spoofy-server",
     "start": "node server.js"
   },
   "keywords": [],
