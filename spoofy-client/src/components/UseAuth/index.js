@@ -6,24 +6,18 @@ export default function UseAuth(code) {
   const [refreshToken, setRefreshToken] = useState();
   const [expiresIn, setExpiresIn] = useState();
 
-  console.log(accessToken);
-  console.log(refreshToken);
-  console.log(expiresIn);
-
   useEffect(() => {
     axios
       .post("https://spoofy-backend.herokuapp.com/login", {
         code,
       })
       .then((res) => {
-        console.log(res);
         setAccessToken(res.data.accessToken);
         setRefreshToken(res.data.refreshToken);
         setExpiresIn(res.data.expiresIn);
         window.history.pushState({}, null, "/");
       })
       .catch((err) => {
-        console.log(err);
         // Redirect user to home when authorization code expires
         window.location = "/";
       });
@@ -38,13 +32,11 @@ export default function UseAuth(code) {
           refreshToken,
         })
         .then((res) => {
-          console.log(res.data);
           setAccessToken(res.data.accessToken);
           setExpiresIn(res.data.expiresIn);
           window.history.pushState({}, null, "/");
         })
         .catch((err) => {
-          console.log(err);
           // Redirect user to home when authorization code expires
           window.location = "/";
         });

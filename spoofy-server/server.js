@@ -58,7 +58,6 @@ app.post("/login", (req, res) => {
       });
     })
     .catch((err) => {
-      console.log("Error at login: " + err);
       res.sendStatus(400);
     });
 });

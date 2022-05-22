@@ -26,7 +26,6 @@ export default function Homepage({ code }) {
     setSearch("");
     setLyrics("");
   }
-  console.log(searchResults);
 
   // Access lyrics, and changes everytime current playing track changes
   useEffect(() => {
