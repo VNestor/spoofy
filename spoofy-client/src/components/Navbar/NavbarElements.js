@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { Navbar } from "react-bootstrap";
 
-export const StyledButton = styled.a`
+export const StyledNavbar = styled(Navbar)`
   font-family: "Poppins";
   font-weight: 600;
-  background-color: #1db954;
   color: #fff;
 `;

@@ -5,6 +5,8 @@ import WebPlayer from "../WebPlayer";
 import { Container, Form } from "react-bootstrap";
 import SpotifyWebApi from "spotify-web-api-node";
 import axios from "axios";
+import Navbar from "../Navbar";
+import { StyledLyrics } from "./HomepageElements";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "5c8eacaec7c049d6a1a138c8e621fa84",
@@ -84,30 +86,37 @@ export default function Homepage({ code }) {
     return () => (cancelRequest = true);
   }, [search, accessToken]);
   return (
-    <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
-      <Form.Control
-        type="search"
-        placeholder="Artist, Song, or Podcast"
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-      />
-      <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-        {searchResults.map((track) => (
-          <TrackSearchResult
-            track={track}
-            key={track.uri}
-            chooseTrack={chooseTrack}
-          />
-        ))}
-        {searchResults.length === 0 && (
-          <div className="text-center" style={{ whiteSpace: "pre" }}>
-            {lyrics}
-          </div>
-        )}
-      </div>
-      <div>
-        <WebPlayer accessToken={accessToken} trackUri={playingTrack?.uri} />
-      </div>
-    </Container>
+    <>
+      <Container
+        className="d-flex flex-column py-2"
+        style={{ height: "100vh" }}
+      >
+        <Navbar accessToken={accessToken} />
+        <Form.Control
+          className="py-3 mt-3"
+          type="search"
+          placeholder="Search For Artists or Songs"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+        />
+        <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
+          {searchResults.map((track) => (
+            <TrackSearchResult
+              track={track}
+              key={track.uri}
+              chooseTrack={chooseTrack}
+            />
+          ))}
+          {searchResults.length === 0 && (
+            <div className="text-center" style={{ whiteSpace: "pre" }}>
+              <StyledLyrics>{lyrics}</StyledLyrics>
+            </div>
+          )}
+        </div>
+        <div>
+          <WebPlayer accessToken={accessToken} trackUri={playingTrack?.uri} />
+        </div>
+      </Container>
+    </>
   );
 }

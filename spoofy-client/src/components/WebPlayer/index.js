@@ -10,6 +10,17 @@ export default function WebPlayer({ accessToken, trackUri }) {
   if (!accessToken) return null;
   return (
     <SpotifyPlayer
+      styles={{
+        activeColor: "#fff",
+        bgColor: "#282828",
+        trackNameColor: "#fff",
+        trackArtistColor: "#a9a9a9",
+        sliderColor: "#fff",
+        sliderTrackColor: "#a9a9a9",
+        sliderHandleColor: "#fff",
+        sliderTrackBorderRadius: "#fff",
+        color: "#fff",
+      }}
       token={accessToken}
       callback={(state) => {
         if (!state.isPlaying) setPlay(false);
