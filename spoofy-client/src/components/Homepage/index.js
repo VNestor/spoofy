@@ -6,7 +6,7 @@ import { Container, Form } from "react-bootstrap";
 import SpotifyWebApi from "spotify-web-api-node";
 import axios from "axios";
 import Navbar from "../Navbar";
-import { StyledLyrics } from "./HomepageElements";
+import { StyledLyrics, StyledPlayerDiv } from "./HomepageElements";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "5c8eacaec7c049d6a1a138c8e621fa84",
@@ -113,9 +113,9 @@ export default function Homepage({ code }) {
             </div>
           )}
         </div>
-        <div>
+        <StyledPlayerDiv>
           <WebPlayer accessToken={accessToken} trackUri={playingTrack?.uri} />
-        </div>
+        </StyledPlayerDiv>
       </Container>
     </>
   );

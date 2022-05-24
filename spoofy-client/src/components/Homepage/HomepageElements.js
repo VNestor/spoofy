@@ -9,3 +9,9 @@ export const StyledLyrics = styled.p`
     font-size: 0.75em;
   }
 `;
+
+export const StyledPlayerDiv = styled.div`
+  @media screen and (max-width: 750px) {
+    margin-bottom: 3rem;
+  }
+`;
