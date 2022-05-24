@@ -12,6 +12,6 @@ export const StyledLyrics = styled.p`
 
 export const StyledPlayerDiv = styled.div`
   @media screen and (max-width: 750px) {
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
   }
 `;
