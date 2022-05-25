@@ -3,15 +3,15 @@ import { Container, NavDropdown } from "react-bootstrap";
 import { StyledNavbar } from "./NavbarElements";
 import SpotifyWebApi from "spotify-web-api-node";
 
-const CLIENT_ID = `${process.env.CLIENT_ID}`;
+const CLIENT_ENV = `${process.env.CLIENT_ID}`;
 const URL =
   "https://accounts.spotify.com/authorize?client_id=" +
-  CLIENT_ID +
+  CLIENT_ENV +
   "&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
 
 const LOGOUT_URL = "https://www.spotify.com/us/logout/";
 const spotifyApi = new SpotifyWebApi({
-  clientId: CLIENT_ID,
+  clientId: CLIENT_ENV,
 });
 
 export default function Navbar({ accessToken }) {
