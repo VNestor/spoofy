@@ -8,7 +8,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import { StyledLyrics, StyledPlayerDiv } from "./HomepageElements";
 
-const CLIENT_ENV = `${process.env.CLIENT_ID}`;
+const CLIENT_ENV = `${process.env.REACT_APP_CLIENT_ID}`;
 
 const spotifyApi = new SpotifyWebApi({
   clientId: CLIENT_ENV,

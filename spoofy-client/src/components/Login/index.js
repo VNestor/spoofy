@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 
 //authorization ref: https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
 //scope ref: https://developer.spotify.com/documentation/general/guides/authorization/scopes/
-const CLIENT_ENV = `${process.env.CLIENT_ID}`;
+const CLIENT_ENV = `${process.env.REACT_APP_CLIENT_ID}`;
 
 const URL =
   "https://accounts.spotify.com/authorize?client_id=" +
