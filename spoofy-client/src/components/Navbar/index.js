@@ -3,7 +3,7 @@ import { Container, NavDropdown } from "react-bootstrap";
 import { StyledNavbar } from "./NavbarElements";
 import SpotifyWebApi from "spotify-web-api-node";
 
-const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_ID = `${process.env.CLIENT_ID}`;
 const URL =
   "https://accounts.spotify.com/authorize?client_id=" +
   CLIENT_ID +
