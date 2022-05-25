@@ -11,7 +11,7 @@ const URL =
 
 const LOGOUT_URL = "https://www.spotify.com/us/logout/";
 const spotifyApi = new SpotifyWebApi({
-  clientId: process.env.CLIENT_ID,
+  clientId: CLIENT_ID,
 });
 
 export default function Navbar({ accessToken }) {

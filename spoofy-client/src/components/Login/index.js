@@ -6,9 +6,12 @@ import Navbar from "../Navbar";
 
 //authorization ref: https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
 //scope ref: https://developer.spotify.com/documentation/general/guides/authorization/scopes/
+const CLIENT_ID = process.env.CLIENT_ID;
 
 const URL =
-  "https://accounts.spotify.com/authorize?client_id=5c8eacaec7c049d6a1a138c8e621fa84&response_type=code&redirect_uri=https://clinquant-kringle-12f3b9.netlify.app&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
+  "https://accounts.spotify.com/authorize?client_id=" +
+  CLIENT_ID +
+  "&response_type=code&redirect_uri=https://clinquant-kringle-12f3b9.netlify.app&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
 
 export default function Login() {
   return (

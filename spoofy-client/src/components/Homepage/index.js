@@ -8,8 +8,10 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import { StyledLyrics, StyledPlayerDiv } from "./HomepageElements";
 
+const CLIENT_ID = process.env.CLIENT_ID;
+
 const spotifyApi = new SpotifyWebApi({
-  clientId: "5c8eacaec7c049d6a1a138c8e621fa84",
+  clientId: CLIENT_ID,
 });
 
 export default function Homepage({ code }) {
