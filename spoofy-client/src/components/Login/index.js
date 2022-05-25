@@ -20,12 +20,23 @@ export default function Login() {
           style={{ minHeight: "75vh" }}
         >
           <Alert variant={"warning"} className="text-center">
-            A Spotify account is required to use this application.
+            Due to Spotify&apos;s limitations, only Spotify users with access to
+            Spoofy may use this app.
             <br />
             If you would like to see a demo, please visit the repo{" "}
             <a href="https://github.com/VNestor/spoofy" className="alert-link">
               here
             </a>
+            .
+            <br />
+            If you would like to be granted access, you may reach out to me via{" "}
+            <a
+              href="https://www.linkedin.com/in/vnestor/"
+              className="alert-link"
+            >
+              LinkedIn
+            </a>
+            .
           </Alert>
           <StyledButton type="button" className="btn btn lg" href={URL}>
             Login With Spotify
