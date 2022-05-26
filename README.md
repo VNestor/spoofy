@@ -7,7 +7,8 @@ This application allows a user to sign in using their personal Spotify account, 
 
 ## Demo
 
-No demo yet.
+https://user-images.githubusercontent.com/37969271/170391819-6c3e57a4-ece6-4140-8431-434278439640.mov
+
 
 ## Dependencies
 
